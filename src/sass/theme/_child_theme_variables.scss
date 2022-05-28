@@ -4,4 +4,28 @@
 
 
 $purple: #5533ff; // Thats a sample how you could change a BootStrap variable.
-$primary: $purple;  // Once we've changed the value, we'll also make it the primary brand color.
+$primary: #868670;  // Once we've changed the value, we'll also make it the primary brand color.
+$secondary:#1c2536;
+$info: $secondary;
+@font-face {
+    font-family: 'ProximaNova-Regular';
+    src: url("/fonts/FontsFree-Net-proxima_nova_reg-webfont.ttf") format("truetype");
+    
+ }
+ @font-face {
+    font-family: 'Playfair Display';
+    src: url("/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf") format("truetype");
+    src: url("/fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+ }
+$font-family: 'ProximaNova-Regular';
+$font-family-Playfair: 'Playfair Display', serif;
+$enable-shadows: true;
+$box-shadow:   0 .5rem 1rem rgba($primary, .15);
+
+// navbar colors
+$navbar-brand-font-size: 3rem;
+$navbar-dark-brand-color:$primary;
+$navbar-dark-color:#eff;
+$navbar-dark-active-color: $primary;
+$navbar-dark-brand-hover-color:$primary;
+$navbar-dark-hover-color:$primary;

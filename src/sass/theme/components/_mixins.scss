@@ -1,0 +1,6 @@
+/* Mixin for transition css */
+@mixin transition-ease() {
+    -webkit-transition: 1s ease-out;
+    transition: 1s ease-out;
+
+}

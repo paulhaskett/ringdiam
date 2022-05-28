@@ -85,5 +85,51 @@ function understrap_child_customize_controls_js() {
 		'20130508',
 		true
 	);
+
 }
+
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
+
+
+// add category drop down to archive/shop page
+function woocommerce_category_dropdown(){
+	
+	?>
+	<div class="container" style="width:300px; float:right">
+	<?php
+
+	$args = array(
+		'before_widget' => '<div class="widget %s">', 
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>'
+		);
+	$instance = array(
+		'dropdown' => 1,
+		'count'    => 1,
+		);
+	
+	the_widget( 'WC_Widget_Product_Categories', $instance,$args );
+	?>
+	</div>
+	<?php
+	
+	
+	
+}
+// remove default sorting dropdown
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+
+
+
+//add the category shortcode to shop page
+add_action( 'woocommerce_before_shop_loop', 'woocommerce_category_dropdown', 30 );
+//hide the shop title
+add_filter( 'woocommerce_show_page_title', '__return_null' );
+
+//hide showing x y z results from shop page
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+
+//hide the default sorting drop down from arcive page
+//remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );

@@ -1,0 +1,48 @@
+body{
+    
+    margin: 0px;
+    padding: 0px;
+    font-family: 'ProximaNova-Regular';
+    font-size: 16px;
+    color: #333;           
+
+}
+a{
+    @include transition-ease;
+    &:hover{
+        color:#333;
+        @include transition-ease;
+    }
+}
+.category-dropdown{
+    text-transform: uppercase;
+    margin: 10px;
+    float: right;
+    border:0px;
+    &:focus-visible{
+        outline: none;
+    }
+}
+#main-menu{
+    border-bottom: 1px solid $primary;
+    .current-menu-item{
+
+        
+        a{
+            color: $primary;
+
+        }
+    }
+            
+        
+    
+    a{
+        @include transition-ease;
+        
+    }
+}
+
+
+
+
+
